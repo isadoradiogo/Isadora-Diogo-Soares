@@ -1,0 +1,157 @@
+
+1. Escreva uma função que receba dois números inteiros retorne o menor número.
+
+void main() { 
+   List <int> n =  [10, 30];
+   
+  print("${(n.reduce(min))}");
+  }
+------------------------------------------------------------------------------------
+2. Faça uma função que recebe por parâmetro um valor inteiro e positivo e retorna o
+ valor lógico Verdadeiro caso o valor seja primo e Falso em caso contrário.
+
+void main( ){
+
+  int Primo(int numero){
+    
+    print(Primo);
+    
+    int i=0;
+    int p=1;
+
+    for(i=2;i<numero;i++){
+        if(numero%i==0){
+            p=0;
+        }
+    }
+    return p;
+}
+-----------------------------------------------------------------------------------
+3. Faça uma função que recebe um valor inteiro e verifica se o valor é positivo ou negativo.
+ A função deve retornar um valor booleano.
+
+void main() { 
+   bool test; 
+   test = 12 >= 0; 
+   print(test);
+  }
+
+--------------------------------------------------------------------------------------
+4. Faça uma função que leia um número não determinado de valores positivos 
+e retorna a média aritmética dos mesmos.
+
+void main() { 
+   
+  print soma, num, media, i;
+
+ soma = 0;
+ i = 0;
+ num = 1;
+
+ while(num != 0)
+ {
+ print("\n8");
+ print("%f", &num);
+
+ while(num < 0)
+ {
+ print("\nNumero invalidao!");
+ print("\n6");
+ print("%f", &num);
+ }
+
+ soma += num;
+
+ i++;
+ }
+
+ --------------------------------------------------------------------------------------------
+5. Escreva uma função que recebe, por parâmetro, receba 2 valores inteiros
+ e positivo e retorna o somatório desse valor.
+
+void main() { 
+   int a = 2;
+   int b = 5;
+  
+    print(a + b);
+  }
+
+}
+
+-------------------------------------------------------------------------------------------------
+6. Faça uma função que recebe a idade de um nadador por parâmetro e retorna , também por parâmetro, 
+a categoria desse nadador de acordo com a tabela abaixo (imagem2):
+
+
+ void main() { 
+   int idade =  ano(15);
+   print(idade);
+   print(ano);
+  }
+int ano(a){
+  if ( a >=5 && a <=7){
+    print("infantil a");
+  }
+  else if (a >= 8 && a <= 10){
+    print ("infantil b");
+  }
+  else if (a >= 11 && a <= 13){
+    print ("juvenil a");
+  }
+  else if (a >= 14 && a <= 17){
+    print ("juvenil b");
+  }else{
+    print("Adulto");
+  };
+  return ano;
+  }
+------------------------------------------------------------------------------------------
+7. Faça uma função que recebe um valor inteiro e verifica se o valor é par.
+ A função deve retornar 1 se o número for par e 0 se for ímpar
+
+void main() { 
+   int n =  10;
+   
+  if (n % 2 != 0){
+    print(1);
+  }else{
+    print(0);
+  }
+  }
+------------------------------------------------------------------------------------------
+8.Fazer um programa que receba 2 números e informe:
+  a) A soma dos números;
+  b) O produto do primeiro número pelo quadrado do segundo;
+  c) O quadrado do primeiro número;
+  d) O triplo do dobro da soma dos dois números
+  e) A metade do triplo do dobro da soma dos dois números
+  f) O módulo do primeiro número.
+
+
+void main(){
+  
+  int a = 10;
+  int b = 5;
+  
+  print (a+b);
+  print(a+(b*b));
+  print(a+a);
+  print(3*(2*(a+b)));
+  print((3*(2*(a+b)))/2);
+  print(pow(a , 1));
+}
+--------------------------------------------------------------------------------------
+9-. Faça um programa que leia dois valores e imprima:
+  a) se o primeiro valor for menor que o segundo, a lista de valores do primeiro até
+o segundo;
+  b) se o primeiro valor for menor que o segundo a lista de valores do segundo até
+o primeiro em ordem decrescente;
+  c) se ambos forem iguais a mensagem "valores iguais".
+
+void main() { 
+   List <int> n =  [10, 30];
+   
+  if(n.elementAt(1) > n.elementAt(2)){
+  print("${(n.reduce)}");
+    }
+  }
