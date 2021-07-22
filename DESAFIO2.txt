@@ -1,0 +1,130 @@
+LAYOUT 1
+
+import  'dart: html' ;
+import  'package: flutter / material.dart' ;
+classe layout1 estende  StatefulWidget {
+  const  layout1 ({ Key ? key}) :  super (key : key);
+
+  @sobrepor
+  _layout1State createState () =>  _layout1State ();
+}
+
+class _layout1State extends  State < layout1 > {
+  @sobrepor
+   Construção de widget ( contexto BuildContext ) {
+    return  Scaffold (
+      appBar :  AppBar (
+        título :  Texto ( "Testando" ),
+        backgroundColor :  Colors .amber,
+      ),
+      corpo :  Centro (
+        filho :  coluna (
+          mainAxisAlignment :  MainAxisAlignment .start,
+          filhos : [
+              Imagem . ativo (
+                "imagens / teste.jpg" ,
+                  largura :  150 ,
+                  altura :  100 ,
+              ),
+            RaisedButton (
+              filho :  Texto ( "achar bonito" ),
+              cor :  Cores .amber,
+              onPressed : () {
+                imprimir ( "bonito" );
+              },
+            ),
+            Imagem . ativo (
+              "imagens / flowers.jpg" ,
+              largura :  150 ,
+              altura :  100 ,
+            ),
+            RaisedButton (
+              filho :  Texto ( "achar bonito" ),
+              cor :  Cores .amber,
+              onPressed : () {
+                imprimir ( "bonito" );
+              },
+            ),
+            Imagem . ativo (
+              "imagens / poppy.jpg" ,
+              largura :  150 ,
+              altura :  100 ,
+            ),
+            RaisedButton (
+              filho :  Texto ( "achar bonito" ),
+              cor :  Cores .amber,
+              onPressed : () {
+                imprimir ( "bonito" );
+              },
+            ),
+            Imagem . ativo (
+              "imagens / tree.jpg" ,
+              largura :  150 ,
+              altura :  100 ,
+            ),
+            RaisedButton (
+              filho :  Texto ( "achar bonito" ),
+              cor :  Cores .amber,
+              onPressed : () {
+                imprimir ( "bonito" );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+-----------------------------------------------------------------------------------------------------------------
+
+LAYOUT 2 
+
+import  'package: flutter / material.dart' ;
+
+classe layout2 estende  StatefulWidget {
+  const  layout2 ({ Key ? key}) :  super (key : key);
+
+  @sobrepor
+  _layout2State createState () =>  _layout2State ();
+}
+
+class _layout2State extends  State < layout2 > {
+  @sobrepor
+   Construção de widget ( contexto BuildContext ) {
+    return  Scaffold (
+        corpo :  Centro (
+        filho :  coluna (
+          mainAxisAlignment :  MainAxisAlignment .center,
+            filhos : [
+              Imagem . ativo (
+                "imagens / abendstimmung.jpg" ,
+                largura :  750 ,
+                altura :  550 ,
+              ),
+              RaisedButton (
+                criança :  Texto ( "curtir" ),
+                cor :  Cores .amber,
+                onPressed : () {
+                  imprimir ( "bonito" );
+                },
+              ),
+            ],
+        ),
+        ),
+    );
+  }
+}
+---------------------------------------------------------------------------------------------------------------------------
+MAIN.DART
+
+import  'package: desafio2 / layout1.dart' ;
+import  'package: desafio2 / layout2.dart' ;
+import  'package: flutter / material.dart' ;
+
+
+void  main () {
+  runApp ( MaterialApp (
+    home :  layout1 (),
+    // home: layout2 (),
+  ));
+}
