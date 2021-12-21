@@ -1,0 +1,110 @@
+1- public class Exercicio01 {
+    
+    public String verificarForma(int lado1, int lado2, int lado3) {
+        
+        if ((lado1 + lado2) > lado3 || (lado2 + lado3) > lado1 || (lado1 + lado3) > lado2 ) {
+            if(lado1 == lado2 && lado2 == lado3) {
+                return "Este triângulo é equilátero!";
+            } else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+                return "Este triângulo é isóceles!";
+            } else {
+                return "Este triângulo é escaleno!";
+            }
+        } else {
+            return "Essa forma não é um triângulo!";
+        }
+    }
+}
+----------------------------------------------------------------
+2-public class Exercicio02 {
+    
+    public String verificarAno(int ano) {
+        if(ano % 4 == 0 && ano % 100 != 0) {
+            return "O ano informado é bissexto";
+        } else if (ano % 4 == 0 && ano % 100 == 0 && ano % 400 == 0) {
+            return "O ano informado é bissexto";
+        } else {
+            return "O ano informado não é bissexto!";
+        }
+    }
+}
+----------------------------------------------------------------------------
+3- ublic class Exercicio03 {
+
+    public String nome;
+
+
+    public Exercicio03(String nome) {
+        this.nome = nome;
+    }
+
+    public String InvestigarIndividuos(String Resp01, String Resp02, String Resp03, String Resp04, String Resp05) {
+               
+        int contagemSim = 0;
+
+        if(Resp01.equalsIgnoreCase("S")) {
+            contagemSim++;
+        }
+
+        if(Resp02.equalsIgnoreCase("S")) {
+            contagemSim++;
+        }
+
+        if(Resp03.equalsIgnoreCase("S")) {
+            contagemSim++;
+        }
+
+        if(Resp04.equalsIgnoreCase("S")) {
+            contagemSim++;
+        }
+
+        if(Resp05.equalsIgnoreCase("S")) {
+            contagemSim++;
+        }
+
+         if (contagemSim == 2) {
+             return String.format("%s é suspeito", nome);
+         } else if (contagemSim >= 3 && contagemSim <= 4) {
+            return String.format("%s é cúmplice", nome);
+         } else if (contagemSim == 5) {
+             return String.format("%s é o(a) assassino(a)", nome);
+         } else {
+            return String.format("%s é inocente", nome);
+         }
+    }
+}
+-------------------------------------------------------------------------------
+
+4-public class Exercicio04 {
+    
+    public float calcularValor(float quantidadeLitros, String tipoCombustivel) {
+
+        float valorAlcool = 7.09f;
+        float valorGasolina = 7.49f;
+        float valorTotal = 0;
+
+        if(tipoCombustivel.equalsIgnoreCase("A") && quantidadeLitros <= 20) {
+
+            valorTotal = (valorAlcool * quantidadeLitros) - (quantidadeLitros * 0.03f);
+            return valorTotal;
+
+        } else if (tipoCombustivel.equalsIgnoreCase("A") && quantidadeLitros > 20) { 
+
+            valorTotal = (valorAlcool * quantidadeLitros) - (quantidadeLitros * 0.05f);
+            return valorTotal;
+        } 
+
+        if (tipoCombustivel.equalsIgnoreCase("G") && quantidadeLitros <= 20) {
+
+            valorTotal = (valorGasolina * quantidadeLitros) - (quantidadeLitros * 0.04f);
+            return valorTotal;
+
+        } else if (tipoCombustivel.equalsIgnoreCase("G") && quantidadeLitros > 20){
+
+            valorTotal = (valorGasolina * quantidadeLitros) - (quantidadeLitros * 0.06f);
+            return valorTotal;
+        }
+        
+        return valorTotal;
+    }   
+}
