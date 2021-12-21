@@ -1,0 +1,73 @@
+public  class  isajava {
+
+
+
+        public  static  void  main ( String  args []) {
+        Sistema . para fora . println ( " - iniciando  " );
+        Arquivo baseDirectory =  novo  arquivo (args [ 0 ]);
+        Sistema . para fora . println ( " - Usar o diretório base: "  + baseDirectory . getAbsolutePath ());
+
+      
+       Arquivo mavenWrapperPropertyFile =  novo  Arquivo (baseDirectory, MAVEN_WRAPPER_PROPERTIES_PATH );
+        String url =  DEFAULT_DOWNLOAD_URL ;
+        if (mavenWrapperPropertyFile . existe ()) {
+            FileInputStream mavenWrapperPropertyFileInputStream =  null ;
+            tente {
+                mavenWrapperPropertyFileInputStream =  new  FileInputStream (mavenWrapperPropertyFile);
+                Propriedades mavenWrapperProperties =  new  Properties ();
+                mavenWrapperProperties . load (mavenWrapperPropertyFileInputStream);
+                url = mavenWrapperProperties . getProperty ( PROPERTY_NAME_WRAPPER_URL , url);
+            } catch ( IOException e) {
+                Sistema . para fora . println ( " - erros a carregar ' "  +  MAVEN_WRAPPER_PROPERTIES_PATH  +  " ' " );
+            } finalmente {
+                tente {
+                    if (mavenWrapperPropertyFileInputStream ! =  null ) {
+                        mavenWrapperPropertyFileInputStream . Fechar();
+                    }
+                } catch ( IOException e) {
+                    // Ignorar ...
+                }
+            }
+        }
+        Sistema . para fora . println ( " - Baixando de: "  + url);
+
+        Arquivo outputFile =  novo  arquivo (baseDirectory . GetAbsolutePath (), MAVEN_WRAPPER_JAR_PATH );
+        if ( ! outputFile . getParentFile () . existe ()) {
+            if ( ! outputFile . getParentFile () . mkdirs ()) {
+                Sistema . para fora . println (
+                        " - ERRO ao criar diretório de saída ' "  + outputFile . getParentFile () . getAbsolutePath () +  " ' " );
+            }
+        }
+        Sistema . para fora . println ( " -  executand download para: " + outputFile . getAbsolutePath ());
+        tente {
+            downloadFileFromURL (url, outputFile);
+            Sistema . para fora . println ( " executado " );
+            Sistema . saída ( 0 );
+        } catch ( Throwable e) {
+            Sistema . para fora . println ( " - falha na matrix" );
+            e . printStackTrace ();
+            Sistema . saída ( 1 );
+        }
+    }
+
+    private  static  void  downloadFileFromURL ( String  urlString , File  destination ) throws  Exception {
+        if ( System . getenv ( " MVNW_USERNAME " ) ! =  null  &&  System . getenv ( " MVNW_PASSWORD " ) ! =  null ) {
+            String username =  System . getenv ( " MVNW_USERNAME " );
+            char [] senha =  Sistema . getenv ( " MVNW_PASSWORD " ) . toCharArray ();
+            Autenticador . setDefault ( new  Authenticator () {
+                @Sobrepor
+                protected  PasswordAuthentication  getPasswordAuthentication () {
+                    retornar uma  nova  PasswordAuthentication (seu nome, senha);
+                }
+            });
+        }
+        URL site =  novo  URL (urlString);
+        ReadableByteChannel rbc;
+        rbc =  Canais . newChannel (site . openStream ());
+        FileOutputStream fos =  novo  FileOutputStream (destino);
+        fos . getChannel () . transferFrom (rbc, 0 , Long . MAX_VALUE );
+        fos . Fechar();
+        rbc . Fechar();
+    }
+
+}
