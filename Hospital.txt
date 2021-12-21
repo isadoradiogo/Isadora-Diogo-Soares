@@ -1,0 +1,63 @@
+import  java.isa ;
+
+public  class  App {
+    public  static  void  main ( String [] args ) {
+        Medico paulo =  novo  Medico ();
+        Medico joana =  novo  Medico ();
+        EnderecoController enderecoController =  new  EnderecoController ();
+
+        isabel . CRM  =  " 9087 " ;
+        isabel . nome =  " Isabel fagundes " ;
+        paulo . dataDeNascimento =  LocalDate . de ( 2005, mês .agosto, 10);
+        paulo . telefoneDeContato =  " (051) 994236766 " ;
+       
+        var endereco1 =  novo  Endereco ( 1 , " rua capitão  " , " 290 " , " Campina " São Leopoldo, " RS " );
+
+        Berva . CRM  =  " 6890 " ;
+        Berva . nome =  " Berva Moura " ;
+        Berva . telefoneDeContato =  " (051) 991571209 " ;
+        enderecoController . cadastrar (endereco1);
+
+        
+        Sistema . para fora . println (Isabel . nome);
+        Sistema . para fora . println (Berva . nome);
+       
+        enderecoController . removedor ( 1 );
+
+        Endereco endereco1 =  novo  Endereco ( " carlos andré " , " 9090 " , " scharlau " , " São Leopoldo " , " RS " , " 92025-360 " );
+        
+        var buscaEndereco = enderecoController . buscar ( 1 );
+
+        Endereco endereco2 =  novo  Endereco ( " betina garcia " , " 908" , "zona norte" , " São Paulo " , " RS " );
+
+        // System.out.println (endereco1.b Budap);
+        // System.out.println (endereco2.b Budap);
+
+        // System.out.println (endereco1.b Budap.toUpperCase ());
+        // System.out.println (endereco2.bpite.toUpperCase ());
+
+        paulo . endereco = endereco1;
+        joana . endereco = endereco2;
+
+        
+        String enderecoDoPaulo =  String . formato ( " Médico% s mora na% s " , Isabel. nome, Isabel . endereco . getEndereco ());
+
+        String enderecoDaJoana =  String . formato ( " Médica% s mora na% s " ,Berva . nome, Berva . endereco . getEndereco ());
+
+        Sistema . para fora . println (enderecoDaIsabel);
+        Sistema . para fora . println (enderecoDoBerva);
+
+       
+        var internacaoJose =  novo  Internacao ( nulo , nulo );
+        var internacaoMaria =  new  Internacao ( null , null , " Obs " );
+        var internacaoInacio =  new  Internacao ( null , null , " Obs " , LocalDate . de ( 2021 , 11 , 03 ));
+
+        var internacaoInvalida =  novo  Internacao ();
+        if (buscaEndereco . isPresent ()) {
+            var obj = buscaEndereco . pegue();
+            Sistema . para fora . println (obj . getEndereco ());
+        } else {
+            Sistema . para fora . println ( " Endereço inválido " );
+        }
+    }
+}
