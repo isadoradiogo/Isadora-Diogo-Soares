@@ -1,0 +1,29 @@
+classe  pública Calculos {
+    
+    public  float  calcularForcaPeso ( float  massa , float  aceleracaoDaGravidade ) {
+        retornar massa * aceleracaoDaGravidade;
+    }
+
+    public  float  calcularForcaCentripeta ( float  massaDoCorpo , float  velocidadeDoCorpo , float  raioDaTrajetoria ) {
+        return massaDoCorpo * ((velocidadeDoCorpo * velocidadeDoCorpo) / raioDaTrajetoria);
+    }
+
+    public  float  calcularImpulso ( float  ForcaMedia , float  tempoFinal , float  tempoInicial ) {
+        return  ForcaMedia  * (tempoFinal - tempoInicial);
+    }
+
+    public  float  calcularForcaElastica ( float  constanteElastica , float  deformacaoDoCorpo ) {
+        return constanteElastica * deformacaoDoCorpo;
+    }
+
+    public  float  calcularVelocidadeMedia ( float  distanciaFinal , float  distanciaInicial , float  tempoFinal , float  tempoInicial ) {
+        return (distanciaFinal - distanciaInicial) / (tempoFinal - tempoInicial);
+    }
+
+    public  float  calcularMRU ( float  distanciaInicial , float  velocidade , float  tempo ) {
+        return distanciaInicial + (velocidade * tempo);     
+    }
+
+    public  float  calcularMRUV ( float  velocidadeInicial , float  aceleracao , float  tempo ) {
+        retorno velocidadeInicial + (aceleracao * tempo);
+    }
